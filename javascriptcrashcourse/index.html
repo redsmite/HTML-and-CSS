@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Learning Javascript</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script src="main.js"></script>
+</head>
+<body id="body">
+	<div class="header">
+		<h1 id="heading">Learning Javascript</h1>
+		<p>with Brad Traversky</p>
+	</div>
+
+<div class="container">
+	<button class="button" onclick="changeText()">Click Me</button>
+
+<form method="post" action="index.html" name="myForm" onsubmit="return validateForm()">
+<div>
+	<label>First Name: </label>
+	<input type="text" name="firstName" id="firstName">
+</div>
+<br>
+<div>
+	<label>Last Name: </label>
+	<input type="text" name="lastName" id="lastName">
+</div>
+<br>
+	<input type="submit" name="submit">
+</form>
+<br>
+<div>
+	<label>Background</label>
+	<select name="background" id="background" onchange="changeBackground(this)">
+		<option value="red">Red</option>
+		<option value="blue">Blue</option>
+		<option value="green">Green</option>
+	</select>
+</div>
+</div> <!-- Container -->
+<script type="text/javascript">
+	//variable
+	var x = 1;
+	var y = 2;
+
+	console.log(x+y);
+
+	//array
+	var idol=['ichigo','aoi','ran'];
+
+	console.log(idol);
+	console.log(idol[0]);
+
+	//loops (for and while loop)
+	for(var i = 0; i <= 10; i++){
+		console.log('I love the number '+i);
+	}
+
+	var x=0;
+	while(x<=10){
+		console.log(x);
+		x++;
+	}
+
+	//foreach
+	var numbers = [33,54,76,34,2,6];
+numbers.reverse();
+
+	numbers.forEach(function(number){
+		console.log('a) '+number);
+	});
+
+	for(var i=0;i<numbers.length;i++){
+		console.log('b) '+numbers[i])
+	}
+
+	//conditional
+	if(1==1){
+		console.log('This is true');
+	} else {
+		console.log('This is false');
+	}
+
+	var fruit ='banana';
+
+	//switch
+	
+	switch(fruit){
+		case "banana":
+			console.log('I love bananas. ( ͡° ͜ʖ ͡°)');
+			break;
+		case "apple":
+			console.log('Watashi wa apples daisuki.');
+			break;
+		case "orange":
+			console.log('I ate Orange and it was K.');
+			break;
+		default:
+			console.log('I love all the fruits.');
+			break;
+	}
+
+	//Object literal
+
+	var person = {
+		firstName: 'Brad',
+		lastName: 'Traversky',
+		age: 34,
+		children: ['Briana','Nicholas'],
+		address:{
+			street:'555 Something st',
+			city:'Boston',
+			state:'MA'
+		},
+		fullName: function(){
+			return this.firstName +" "+this.lastName;
+	}
+	}
+	
+
+	console.log(person.firstName);
+	console.log(person.children[0]);
+	console.log(person.address.state);
+	console.log(person.fullName());
+
+	//Object Constructor
+
+	var apple = new Object();
+	apple.color = 'red';
+	apple.shape = 'round';
+
+	apple.describe = function(){
+		return 'An apple\'s color is '+this.color+' and it\' shape is '+this.shape;
+	}
+
+	console.log(apple.describe());
+
+	//Constructor Pattern
+	function Fruit(name, color, shape){
+		this.name = name;
+		this.color = color;
+		this.shape = shape;
+
+		this.describe = function(){
+			return 'A '+this.name+'\'s color is '+this.color +' and it\'s shape is '+ this.shape;
+		}
+	}
+
+	var apple = new Fruit('apple','red','round');
+	var melon = new Fruit('melon','green','round');
+
+	console.log(melon.describe());
+
+	var users =[
+	{
+		name:'John Doe',
+		age:30
+	},
+	{
+		name:'Mark Smith',
+		age:44
+	},
+	{
+		name:'Shelly Williams',
+		age:20
+	},
+	];
+
+	console.log(users[0].name);
+
+</script>
+</body>
+</html>
